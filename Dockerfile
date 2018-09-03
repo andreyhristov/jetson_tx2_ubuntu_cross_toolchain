@@ -1,11 +1,18 @@
 FROM ubuntu:16.04
 
-RUN apt-get update \
+RUN dpkg --add-architecture arm64 \
+	&& apt-get update \
 	&& DEBIAN_FRONTEND=noninteractive apt-get install -y \
 	wget file \
 	autoconf \
 	make \
 	less \
+	autoconf \
+	less \
+	libtinyxml2-dev:arm64 \
+	libopencv-dev:arm64 \
+	libgstreamer1.0-dev:arm64 \
+        libgstreamer-plugins-base1.0-dev:arm64 \
 	&& apt-get clean \
   && rm -rf /var/lib/apt/lists/*
   
