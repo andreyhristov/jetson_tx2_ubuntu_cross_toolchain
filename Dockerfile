@@ -11,7 +11,7 @@ RUN apt-get update \
   
 RUN wget https://developer.nvidia.com/embedded/dlc/l4t-gcc-toolchain-64-bit-28-2-ga -O gcc-toolchain.tar.gz \
     && cd /usr \
-    && tar --strip-components 1 -zxvf /gcc-4.8.5-aarch64.tgz \
+    && tar --strip-components 1 -zxvf /gcc-toolchain.tar.gz \
     && rm /tmp/gcc-toolchain.tar.gz
 
 RUN echo "int main(){ int a=42;return a;}" > /tmp/a.c \
